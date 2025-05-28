@@ -51,15 +51,17 @@ export default function AddExpensePage() {
 
   return (
     <div className="min-h-screen bg-gray-100 p-4">
-        <div className="flex justify-center items-center mx-auto max-w-[36rem] gap-2">
-<button
-        onClick={() => router.back()}
-        className="flex items-start text-sm w-[37%] text-black hover:cursor-pointer transition mb-4"
-      >
-        <ArrowLeft className="h-4 w-4 mr-2 " />
-      </button>
-      <h1 className="flex items-start w-[62%] text-xl font-bold text-center my-4">Daily Expenses</h1>
-        </div>
+      <div className="flex justify-center items-center mx-auto max-w-[36rem] gap-2">
+        <button
+          onClick={() => router.back()}
+          className="flex items-start text-sm w-[37%] text-black hover:cursor-pointer transition mb-4"
+        >
+          <ArrowLeft className="h-4 w-4 mr-2 " />
+        </button>
+        <h1 className="flex items-start w-[62%] text-xl font-bold text-center my-4">
+          Daily Expenses
+        </h1>
+      </div>
 
       <form
         onSubmit={handleSubmit}

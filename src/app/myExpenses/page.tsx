@@ -69,16 +69,18 @@ export default function MyExpensesPage() {
 
   return (
     <div className="min-h-screen bg-gray-100 p-4">
-      <div className="flex justify-center items-center mx-auto max-w-[36rem] gap-2"><button
-        onClick={() => router.back()}
-        className="flex items-start text-sm w-[37%] text-black hover:cursor-pointer transition mb-4"
-      >
-        <ArrowLeft className="h-4 w-4 mr-2 " />
-      </button>
-      <h1 className="flex items-start w-[62%] text-xl font-bold text-center mb-4">Expense Search</h1>
-</div>
+      <div className="flex justify-center items-center mx-auto max-w-[36rem] gap-2">
+        <button
+          onClick={() => router.back()}
+          className="flex items-start text-sm w-[37%] text-black hover:cursor-pointer transition mb-4"
+        >
+          <ArrowLeft className="h-4 w-4 mr-2 " />
+        </button>
+        <h1 className="flex items-start w-[62%] text-xl font-bold text-center mb-4">
+          Expense Search
+        </h1>
+      </div>
       <div className="max-w-[36rem] mx-auto bg-white p-4 rounded-lg shadow-md space-y-4">
-        
         <div>
           <label className="block text-sm font-medium mb-1">Expense Type</label>
           <input
