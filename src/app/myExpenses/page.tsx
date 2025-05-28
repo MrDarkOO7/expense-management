@@ -4,6 +4,14 @@ import { db } from "../../../firebase/clientApp";
 import { ArrowLeft } from "lucide-react";
 import { useRouter } from "next/navigation";
 
+const expenseOptions = [
+  "Food",
+  "Transport",
+  "Bills",
+  "Shopping",
+  "Miscellaneous",
+];
+
 interface Expense {
   id: string;
   date: string;
@@ -69,27 +77,32 @@ export default function MyExpensesPage() {
 
   return (
     <div className="min-h-screen bg-gray-100 p-4">
-      <div className="flex justify-center items-center mx-auto max-w-[36rem] gap-2">
+      <div className="relative mx-auto max-w-[36rem] mb-4">
         <button
           onClick={() => router.back()}
-          className="flex items-start text-sm w-[37%] text-black hover:cursor-pointer transition mb-4"
+          className="absolute left-0 top-1 text-black hover:cursor-pointer transition"
         >
           <ArrowLeft className="h-4 w-4 mr-2 " />
         </button>
-        <h1 className="flex items-start w-[62%] text-xl font-bold text-center mb-4">
+        <h1 className="text-xl font-bold text-center">
           Expense Search
         </h1>
       </div>
       <div className="max-w-[36rem] mx-auto bg-white p-4 rounded-lg shadow-md space-y-4">
         <div>
           <label className="block text-sm font-medium mb-1">Expense Type</label>
-          <input
-            type="text"
+          <select
             value={type}
             onChange={(e) => setType(e.target.value)}
             className="w-full border rounded-lg px-3 py-2 shadow-sm"
-            placeholder="Type to filter by type"
-          />
+          >
+            <option value="">Select to filter by type</option>
+            {expenseOptions.map((opt) => (
+              <option key={opt} value={opt}>
+                {opt}
+              </option>
+            ))}
+          </select>
         </div>
 
         <div className="grid grid-cols-2 gap-4">
