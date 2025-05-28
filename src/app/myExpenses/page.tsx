@@ -158,7 +158,7 @@ export default function MyExpensesPage() {
                       {exp.createdAt?.toDate?.().toLocaleTimeString("en-GB")}
                     </td>
                     <td className="px-2 py-1 border">{exp.type}</td>
-                    <td className="px-2 py-1 border text-right text-red-600">
+                    <td className="px-2 py-1 border border-black text-right text-red-600">
                       {exp.amount.toFixed(2)}
                     </td>
                   </tr>
